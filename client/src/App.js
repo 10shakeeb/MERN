@@ -1,10 +1,18 @@
 import React from 'react';
+import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
+
+import bricks from './images/bricks.png';
 
 const App = () => {
     return (
-        <div>
-            <h1>App</h1>
-        </div>
+       <Container maxwidth='lg'>
+            <AppBar position='static' color='inherit'>
+                <Typography variant='h2' align='center'>Bricks</Typography>
+                <img src = {bricks} alt='bricks' height='60'/>
+
+            </AppBar>
+
+       </Container>
     );
 }
 
