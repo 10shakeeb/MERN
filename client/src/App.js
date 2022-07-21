@@ -48,3 +48,5 @@ const App = () => {
 }
 
 export default App;
+
+// passed as a prop to all children components the function setCurrentId and the data currentId so that a post can be updated.
