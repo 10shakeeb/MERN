@@ -25,17 +25,22 @@ const Form = ({ currentId, setCurrentId }) => {
 
         if(currentId){
             dispatch(updatePost(currentId, postData));
+            
 
         }else {
             dispatch(createPost(postData));
+           
 
         }
+        clear()
 
         
 
     }
 
     const clear = () => {
+        setCurrentId(null);
+        setPostData({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
 
     }
 
@@ -43,7 +48,7 @@ const Form = ({ currentId, setCurrentId }) => {
         <Paper className={classes.paper}>
             <form autoComplete='off' noValidate className={'${classes.root} ${classes.form}'} onSubmit={handleSubmit}>
                 <Typography variant='h6'>
-                    Create a Post
+                    {currentId ? 'Editing': 'Creating'} a Post
 
                 </Typography>
                 <TextField name='creator' variant='outlined' label='Creator' fullWidth value={postData.creator} onChange={(e) => setPostData({ ...postData, creator: e.target.value })} />

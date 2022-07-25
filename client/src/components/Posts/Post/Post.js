@@ -32,9 +32,10 @@ const Post = ({post, setCurrentId, currentId} ) => {
                 <Typography variant="body2" color="textSecondary" component="h2">{post.tags.map((tag) => `#${tag} `)}</Typography>
 
             </div>
-            <Card>
-                <Typography className={classes.title} variant = 'h5' gutterBottom> {post.message} </Typography>
-            </Card>
+            <Typography className={classes.title} variant = 'h5' gutterBottom> {post.title} </Typography>
+            <CardContent>
+                <Typography variant = 'h5' gutterBottom> {post.message} </Typography>
+            </CardContent>
             
             
 
