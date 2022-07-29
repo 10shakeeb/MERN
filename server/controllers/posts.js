@@ -58,6 +58,7 @@ import PostMessage from "../models/postMessage.js";
 
    const post = await PostMessage.findById(id);
    const updatedPost = await PostMessage.findByIdAndUpdate(id, { likeCount: post.likeCount + 1 }, { new: true });
+   console.log(post);
 
    res.json(updatedPost);
 
