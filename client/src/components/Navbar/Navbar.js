@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import { AppBar, Button, TabScrollButton, Toolbar, Typography } from '@material-ui/core';
+import { AppBar, Button, Toolbar, Typography, Avatar } from '@material-ui/core';
 
 import useStyles from './styles';
 import bricks from '../../images/bricks.png';
