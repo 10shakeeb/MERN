@@ -3,6 +3,8 @@ import { Avatar, Button, Paper, Grid, Typography, Container} from '@material-ui/
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
 import useStyles from './styles';
+import Input from './Input';
+
 
 const Auth = () => {
   const classes = useStyles();
@@ -30,14 +32,15 @@ const Auth = () => {
                     {
                         isSignup && (
                             <>
-                                <TextField name='firstName' label='First Name' handleChange={handleChange} autoFocus xs={6}/>
-                                <TextField name='lastName' label='Last Name' handleChange={handleChange} autoFocus xs={6}/>
+                                <Input name='firstName' label='First Name' handleChange={handleChange} autoFocus xs={6}/>
+                                
+                                
+                                <Input name='lastName' label='Last Name' handleChange={handleChange} autoFocus xs={6}/>
                             </>
                         )
                     }
                 </Grid>
             </form>
-
         </Paper>
     </Container>
   );
