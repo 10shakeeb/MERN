@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Avatar, Button, Paper, Grid, Typography, Container} from '@material-ui/core';
 import {GoogleLogin} from 'react-google-login';
-
+import Icon from './icon';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
 import useStyles from './styles';
@@ -31,6 +31,17 @@ const Auth = () => {
 
   };
 
+  const googleSuccess = (res) => {
+    console.log(res);
+
+
+  };
+
+  const googleFaliure = () => {
+    console.log("Google Sign in was unsuccessful. Try Again Later");
+
+  };
+
   return (
     <Container component='main' maxWidth='xs'>
         <Paper className={classes.paper} elevation={3}>
@@ -52,8 +63,11 @@ const Auth = () => {
                     {isSignup && <Input name='confirmPassword' label='Repeat Password' handleChange={handleChange} type='password' />}
 
                 </Grid>
+                <Button type='submit' fullWidth variant='contained' color='primary' className={classes.submit}>
+                    {isSignup ? 'Sign Up' : 'Sign In'}
+                </Button>
                 <GoogleLogin 
-                    clientId='GOOGLE ID'
+                    clientId='727384123678-h9a7hv1n5r5ndvku5lb6k355rvpfb6c7.apps.googleusercontent.com'
                     render={(renderProps) => (
                         <Button 
                         className={classes.googleButton} 
@@ -69,15 +83,15 @@ const Auth = () => {
                         </Button>
 
                     )}
+                    onSuccess={googleSuccess}
+                    onFailure={googleFaliure}
+                    cookiePolicy='single_host_origin'
                 
                 />
-                <Button type='submit' fullWidth variant='contained' color='primary' className={classes.submit}>
-                    {isSignup ? 'Sign Up' : 'Sign In'}
-                </Button>
                 <Grid type='container' justify='flex-end'>
                     <Grid item>
                         <Button onClick={switchMode}>
-                            { isSignup ? 'Already have an account? Sign In' : "Don't have an account? Sign up?"}
+                            { isSignup ? 'Already have an account? Sign In' : "Don't have an account? Sign up"}
 
                         </Button>
                     </Grid>
